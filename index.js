@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json({ extended: false }));
 
 app.get('/', (req, res)=>{
-    res.send('Test')
+    res.send('Test to clone')
 })
 
 const PORT = process.env.PORT || 8080;
