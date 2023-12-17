@@ -2,8 +2,6 @@ import express from 'express'
 import mongoose from 'mongoose'
 import { config } from 'dotenv'
 import * as path from 'path'
-import { dirname } from 'path';
-
 
 const __dirname = path.resolve()
 console.log(path.resolve(__dirname, 'views'));
