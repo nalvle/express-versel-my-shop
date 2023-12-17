@@ -1,0 +1,15 @@
+
+    <% users.forEach(function(user) { %>
+    <div class="list-items">
+        <span><%= user.name %></span>
+        <span><%= user.age %></span>
+        <span><%= user.email %></span>
+        <form action="/users" method="DELETE">
+        <input type="hidden" name="id" value="<%= user._id %>">
+        <button type="submit">del</button>
+        </form>
+        <span><%= user._id %></span>
+    </div><!-- /.list-items -->
+<% }); %>
+
+
