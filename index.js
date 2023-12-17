@@ -14,7 +14,7 @@ const admin_views = path.resolve(__dirname, 'views/admin')
 config()
 
 app.use(express.json())
-app.use(express.static('static'))
+app.use(express.static(__dirname + '/static/'));
 
 app.get('/', (req, res)=>{
     res.sendFile(admin_views+'/index.html')
