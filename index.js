@@ -3,6 +3,8 @@ import mongoose from 'mongoose'
 import { config } from 'dotenv'
 import * as path from 'path'
 
+import user from './models/user.js'
+
 const __dirname = path.resolve()
 console.log(path.resolve(__dirname, 'views'));
 console.log(__dirname);
@@ -18,6 +20,12 @@ app.use(express.static(__dirname + '/static/'));
 
 app.get('/', (req, res)=>{
     res.sendFile(admin_views+'/index.html')
+})
+app.get('/user',  (req, res, next) =>{
+    user.create({ 
+        name: "also_awesome",
+        email:"email",
+        password:"password"}).then(()=>console.log('saved'))
 })
 
 
