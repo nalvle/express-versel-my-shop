@@ -1,4 +1,15 @@
+{% extends 'admin/layout.html' %}
+
+{% set title = 'Users' %}
+
+{% block content %}
+
+
+
 <h1>Posts</h1>
+<nav>
+    <a href="/"><h4>Главная</h4></a><p></p>
+</nav>
 <ul>
     {% for user in users %}
     <li id="{{user._id}}">{{ user.name }} :: {{ user.age }} :: {{ user.email }}
@@ -29,3 +40,5 @@
         list-style-type: "\01F892";
     }
 </style>
+
+{% endblock %}
