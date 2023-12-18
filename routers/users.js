@@ -34,8 +34,10 @@ router.get('/', async (request, response)=>{
 //router.put('/users', PostController.update)
 //delete
 router.delete('/:id', urlencodedParser, async (request, response)=>{
-    console.log(request.params.id);
-    response.json(request.params.id)
+    const user = await Customer.findByIdAndDelete(request.params.id)
+    //console.log(request.params.id);
+    //response.json(request.params.id)
+    return response.json({user:user, id:request.params.id})
 })
 
 export default router;

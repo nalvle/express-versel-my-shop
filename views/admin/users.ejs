@@ -1,6 +1,6 @@
 
 <% users.forEach(function(user) { %>
-    <div class="list-items">
+    <div class="list-items" id="<%= user._id %>">
         <span>
             <%= user.name %>
         </span>
@@ -28,7 +28,13 @@
                     headers: {
                         'Content-Type': 'application/json'
                     }
-                }).then(response => console.log(response))
+                }).then((response)=> {
+                    if(response.ok === true){
+                        const element = document.getElementById(id);
+                        element.remove()
+                        console.log(response, id)
+                    }                    
+                })
             }
             // данные для отправки
 /*             const userForm = document.getElementById("user-form");
