@@ -1,0 +1,31 @@
+<h1>Posts</h1>
+<ul>
+    {% for user in users %}
+    <li id="{{user._id}}">{{ user.name }} :: {{ user.age }} :: {{ user.email }}
+        <button onclick="deleteId('{{ user._id }}')">Удалить</button>
+    </li>
+    {% else %}
+    <li>This would display if the 'item' collection were empty</li>
+    {% endfor %}
+</ul>
+<script>
+    function deleteId(id) {
+        fetch('/users/' + id, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then((response) => {
+            if (response.ok === true) {
+                const element = document.getElementById(id);
+                element.remove()
+                console.log(response, id)
+            }
+        })
+    }
+</script>
+<style>
+    ul li{
+        list-style-type: "\01F892";
+    }
+</style>
