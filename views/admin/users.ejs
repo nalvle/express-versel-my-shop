@@ -1,15 +1,45 @@
 
-    <% users.forEach(function(user) { %>
+<% users.forEach(function(user) { %>
     <div class="list-items">
-        <span><%= user.name %></span>
-        <span><%= user.age %></span>
-        <span><%= user.email %></span>
-        <form action="/users" method="DELETE">
-        <input type="hidden" name="id" value="<%= user._id %>">
-        <button type="submit">del</button>
-        </form>
-        <span><%= user._id %></span>
+        <span>
+            <%= user.name %>
+        </span>
+        <span>
+            <%= user.age %>
+        </span>
+        <span>
+            <%= user.email %>
+        </span>
+
+            <button type="submit" onclick=delete_id("<%= user._id %>")>del</button>
+
+        <span>
+            <%= user._id %>
+        </span>
     </div><!-- /.list-items -->
-<% }); %>
+    <% }); %>
 
 
+        <script>
+            function delete_id(id){
+                //console.log(id);
+                fetch('/users/'+id, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then(response => console.log(response))
+            }
+            // данные для отправки
+/*             const userForm = document.getElementById("user-form");
+            userForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+                //console.log(userForm.id.value);
+                fetch('/users/' + userForm.id.value, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+            }) */
+        </script>

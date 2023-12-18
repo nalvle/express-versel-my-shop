@@ -33,9 +33,9 @@ router.get('/', async (request, response)=>{
 //update
 //router.put('/users', PostController.update)
 //delete
-router.delete('/users/:id', urlencodedParser, async (request, response)=>{
-    console.log(1);
-    console.log(request);
+router.delete('/:id', urlencodedParser, async (request, response)=>{
+    console.log(request.params.id);
+    response.json(request.params.id)
 })
 
 export default router;
