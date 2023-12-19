@@ -1,0 +1,47 @@
+
+<div class="nav-menu">
+    <a href="/admin">::</a>
+    <a href="admin/products">Товары</a>
+    <a href="admin/categories">Категории</a>
+    <a href="admin/brands">Бренды</a>
+    <a href="admin/orders">Заказы</a>
+    <a href="admin/users">Покупатели</a>
+    <a href="admin/settings">Настройки</a>
+</div><!-- /.nav -->
+<style>
+    .nav-menu{
+        position: fixed;
+        top: 0;
+        height: 2.5rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background-color: var(--nav-bg);
+        box-shadow: var(--nav-shadow);
+        z-index: 999;
+        padding-left: 10px;
+    }
+
+    .nav-menu a{
+        position: relative;
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--link-color);
+        padding-left: 10px;
+    }
+    .nav-menu a:hover{
+        color: var(--link-color-hover);resize: none;
+    }
+
+    .nav-menu a:not(:first-child)::before {
+			position: absolute;
+			left: -1px;
+			top: 50%;
+			background: #dee2e6;
+			width: 1px;
+			height: 30px;
+			margin-top: -15px;
+			content: "";
+		}
+</style>

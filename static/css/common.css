@@ -1,3 +1,57 @@
-.container{color:#00f}
-.hidden{visibility:hidden;opacity:0;transition:visibility 0s .5s,opacity .5s linear}
+:root{
+    width: 100%;
+    min-height: 100vh;
+    --nav-bg:#FAFBFC;
+    --nav-shadow:0 .46875rem 2.1875rem rgba(4,9,20,.03),0 .9375rem 1.40625rem rgba(4,9,20,.03),0 .25rem .53125rem rgba(4,9,20,.05),0 .125rem .1875rem rgba(4,9,20,.03);
+        /*colors*/
+        --blue: rgba(0, 123, 255, 1);
+        --light-blue: rgba(63, 106, 216, 0.15);
+        --bluee: hsl(211, 100%, 40%);
+        --indigo: #6610f2;
+        --purple: #6f42c1;
+        --pink: #e83e8c;
+        --red: #dc3545;
+        --orange: #fd7e14;
+        --yellow: #ffc107;
+        --green: #28a745;
+        --teal: #20c997;
+        --cyan: #17a2b8;
+        --white: #fff;
+        --gray-light: #F7F7F8;
+        --gray: #6c757d;
+        --gray-dark: #343a40;
+        --primary: #3f6ad8;
+        --secondary: #6c757d;
+        --success: #3ac47d;
+        --info: #16aaff;
+        --warning: #f7b924;
+        --danger: #d92550;
+        --light: rgba(238, 238, 238, 0.7);
+        --light-2: rgba(71, 69, 69, 0.11);
+        --dark: #343a40;
+        --focus: #444054;
+        --alternate: #794c8a;
+
+        --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    
+        --shasow: 0 2px 8px 1px rgba(64, 60, 67, .24);
+        --shasow-light: 0px 0px 45px 15px rgba(59, 86, 115, 0.70);
+    
+        overflow-x: hidden;
+}
+
+a{all:unset;cursor:pointer}
+.container{
+    width: 960px;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 10px;
+}
+@media (max-width: 767px) {
+    .container{
+        width: 100%;
+    }
+}
+.hidden{display:none;opacity:0;transition:visibility 0s .5s,opacity .5s linear}
 .visible{visibility:visible;opacity:1;transition:opacity 2s linear}

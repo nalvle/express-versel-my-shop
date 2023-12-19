@@ -1,0 +1,10 @@
+@font-face {
+    font-family: Avenir;
+    src: url(../../lib/font-ico/fonts/Avenir-Roman.woff);
+  }
+:root{
+    --link-color:#6c757d;
+    --link-color-hover:#343a40;
+    --bg-panel:#FAFBFC;
+    --panel-box-shadow:0 .46875rem 2.1875rem rgba(4,9,20,.03),0 .9375rem 1.40625rem rgba(4,9,20,.03),0 .25rem .53125rem rgba(4,9,20,.05),0 .125rem .1875rem rgba(4,9,20,.03);
+}
