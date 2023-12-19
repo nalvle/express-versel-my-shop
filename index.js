@@ -5,12 +5,13 @@ import * as path from 'path'
 import methodOverride from 'method-override'
 import nunjucks from "nunjucks"
 import logger, {log, colors, symbols, tag, time, info, error, warn, done} from 'diy-log'
-import userRouter from './routers/users.js'
+
+import main from './routers/main.js'
+import mainAdmin from './routers/mainAdmin.js'
+import userAdmin from './routers/usersAdmin.js'
 
 const app = express();
 const __dirname = path.resolve();
-
-const admin_views = path.resolve(__dirname, 'views/admin');
 
 config()
 
@@ -27,14 +28,15 @@ app.set('view engine', 'html')
 
 nunjucks.configure('views', {autoescape: true,express: app});
   
-app.get('/', (_, res)=>{
-    res.render('admin/index', {title:'Привет мир !'});
-})
+app.use('/',main)
+app.use('/admin',mainAdmin)
 
-app.use('/users',userRouter)
+app.use('/admin/users',userAdmin)
 
 
-run().then(()=>{info(' db ready');}).catch(error => console.log(error.stack));
+
+
+run().then(()=>{done(' db ready');}).catch(error => console.log(error.stack));
 
 
 async function run() {

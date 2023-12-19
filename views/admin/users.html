@@ -29,7 +29,8 @@
         }).then((response) => {
             if (response.ok === true) {
                 const element = document.getElementById(id);
-                element.remove()
+                element.classList.add('hidden')
+                //element.remove()
                 console.log(response, id)
             }
         })

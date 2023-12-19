@@ -1,14 +1,7 @@
-import mongoose from "mongoose";
 import express from 'express'
+import Customer from '../models/users.js';
 
 const urlencodedParser = express.urlencoded({extended: false});
-
-const customerSchema = new mongoose.Schema({ 
-    name: String, 
-    age: Number,
-     email: String 
-});
-const Customer = mongoose.model('Customer', customerSchema);
 
 const router = new express.Router()
 //create
