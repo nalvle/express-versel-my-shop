@@ -1,5 +1,7 @@
-
-<div class="nav-menu">
+<div class="nav-panel">
+    <div class="burger" id="burger" onclick="hideShow()">|||||</div><!-- /.burger -->
+</div><!-- /.nav-panel -->
+<div class="nav-menu" id="nav-menu">
     <a href="/admin">::</a>
     <a href="admin/products">Товары</a>
     <a href="admin/categories">Категории</a>
@@ -9,39 +11,104 @@
     <a href="admin/settings">Настройки</a>
 </div><!-- /.nav -->
 <style>
-    .nav-menu{
+    .nav-panel {
         position: fixed;
         top: 0;
+        left: 0;
         height: 2.5rem;
         width: 100%;
         display: flex;
-        align-items: center;
-        gap: 10px;
         background-color: var(--nav-bg);
         box-shadow: var(--nav-shadow);
-        z-index: 999;
-        padding-left: 10px;
+        z-index: 10;
     }
 
-    .nav-menu a{
+    .burger {
+        cursor: pointer;
+        padding: 10px 0 0 10px;
+    }
+    .nav-menu a {
         position: relative;
         font-size: 16px;
         font-weight: 500;
         color: var(--link-color);
         padding-left: 10px;
     }
-    .nav-menu a:hover{
-        color: var(--link-color-hover);resize: none;
+
+    .nav-menu a:hover {
+        color: var(--link-color-hover);
+        resize: none;
     }
 
     .nav-menu a:not(:first-child)::before {
-			position: absolute;
-			left: -1px;
-			top: 50%;
-			background: #dee2e6;
-			width: 1px;
-			height: 30px;
-			margin-top: -15px;
-			content: "";
-		}
+        position: absolute;
+        left: -1px;
+        top: 50%;
+        background: #dee2e6;
+        width: 1px;
+        height: 30px;
+        margin-top: -15px;
+        content: "";
+    }
+
+    @media (max-width: 767px) {
+        .nav-menu {
+            display: none;
+            position: fixed;
+            top: 50px;
+            flex-direction: column;
+            width: 100%;
+            gap: 10px;
+            padding: 0 0 20px 20px;
+            background-color: var(--nav-bg);
+        }
+
+        .nav-menu a {
+            font-size: 20px;
+            padding-top: 10px;
+        }
+
+        .nav-menu a:not(:first-child)::before {
+            position: absolute;
+            left: -1px;
+            top: 50%;
+            background: #dee2e6;
+            width: 90%;
+            height: 1px;
+            margin-top: -15px;
+            content: "";
+        }
+
+        .hide-show {
+            display: flex;
+        }
+    }
+
+    @media (min-width: 767px) {
+        .nav-menu {
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            background-color: var(--nav-bg);
+            z-index: 11;
+            height: 40px;
+            align-items: center;
+        }
+
+        .nav-menu a{
+            padding-right: 10px;
+        }
+
+        .burger {
+            display: none;
+        }
+    }
 </style>
+<script>
+    function hideShow() {
+        var element = document.getElementById("nav-menu");
+        element.classList.toggle("hide-show");
+    }
+</script>
