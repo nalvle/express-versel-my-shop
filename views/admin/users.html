@@ -39,6 +39,8 @@
             if (response.ok === true) {
                 const element = document.getElementById(id);
                 element.classList.add('hidden')
+                element.addEventListener('transitionend', () => element.remove());
+                //element.remove()
             }
         })
     }

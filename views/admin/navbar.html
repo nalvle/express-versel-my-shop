@@ -2,20 +2,20 @@
     <div class="burger" id="burger" onclick="hideShow()">|||||</div><!-- /.burger -->
 </div><!-- /.nav-panel -->
 <div class="nav-menu" id="nav-menu">
-    <a href="/admin">::</a>
-    <a href="/admin/products">Товары</a>
-    <a href="/admin/categories">Категории</a>
-    <a href="/admin/brands">Бренды</a>
-    <a href="/admin/orders">Заказы</a>
-    <a href="/admin/users">Покупатели</a>
-    <a href="/admin/settings">Настройки</a>
+    <a id="admin" href="/admin">::</a>
+    <a id="products" href="/admin/products">Товары</a>
+    <a id="categories" href="/admin/categories">Категории</a>
+    <a id="brands" href="/admin/brands">Бренды</a>
+    <a id="orders" href="/admin/orders">Заказы</a>
+    <a id="users" href="/admin/users">Покупатели</a>
+    <a id="settings" href="/admin/settings">Настройки</a>
 </div><!-- /.nav -->
 <style>
     .nav-panel {
         position: fixed;
         top: 0;
         left: 0;
-        height: 2.5rem;
+        height: 50px;
         width: 100%;
         display: flex;
         background-color: var(--nav-bg);
@@ -27,6 +27,7 @@
         cursor: pointer;
         padding: 10px 0 0 10px;
     }
+
     .nav-menu a {
         position: relative;
         font-size: 16px;
@@ -55,7 +56,7 @@
         .nav-menu {
             display: none;
             position: fixed;
-            top: 50px;
+            top: 60px;
             flex-direction: column;
             width: 100%;
             gap: 10px;
@@ -93,11 +94,11 @@
             display: flex;
             background-color: var(--nav-bg);
             z-index: 11;
-            height: 40px;
+            height: 50px;
             align-items: center;
         }
 
-        .nav-menu a{
+        .nav-menu a {
             padding-right: 10px;
         }
 
@@ -105,10 +106,41 @@
             display: none;
         }
     }
+
+    .active {
+        color: black!important;
+        font-weight: 1000!important;
+    }
 </style>
 <script>
+    console.log(window.location.pathname);
+
     function hideShow() {
         var element = document.getElementById("nav-menu");
         element.classList.toggle("hide-show");
+    }
+
+    switch (window.location.pathname) {
+        case "/admin":
+            admin.classList.add('active')
+            break;
+        case "/admin/products":
+            products.classList.add('active')
+            break;
+        case "/admin/categories":
+            categories.classList.add('active')
+            break;
+        case "/admin/brands":
+            brands.classList.add('active')
+            break;
+        case "/admin/orders":
+            orders.classList.add('active')
+            break;
+        case "/admin/users":
+            users.classList.add('active')
+            break;
+        case "/admin/settings":
+            settings.classList.add('active')
+            break;
     }
 </script>
