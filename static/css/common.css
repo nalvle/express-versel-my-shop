@@ -1,9 +1,14 @@
 :root{
     width: 100%;
     min-height: 100vh;
+    font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,noto sans,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+    background-color: #EAEDF5;
+
     --nav-bg:#FAFBFC;
     --nav-shadow:0 .46875rem 2.1875rem rgba(4,9,20,.03),0 .9375rem 1.40625rem rgba(4,9,20,.03),0 .25rem .53125rem rgba(4,9,20,.05),0 .125rem .1875rem rgba(4,9,20,.03);
-        /*colors*/
+    --nav-border-color:#dee2e6;
+    --nav-color:rgba(13,27,62,.7); 
+    /*colors*/
         --blue: rgba(0, 123, 255, 1);
         --light-blue: rgba(63, 106, 216, 0.15);
         --bluee: hsl(211, 100%, 40%);
@@ -55,3 +60,32 @@ a{all:unset;cursor:pointer}
 }
 .hidden{visibility:hidden;opacity:0;transition:visibility 0s .5s,opacity .5s linear}
 .visible{visibility:visible;opacity:1;transition:opacity 2s linear}
+
+.card{
+    width: 100%;
+    min-height: 100px;
+    box-shadow: 0 .46875rem 2.1875rem rgba(4,9,20,.03),0 .9375rem 1.40625rem rgba(4,9,20,.03),0 .25rem .53125rem rgba(4,9,20,.05),0 .125rem .1875rem rgba(4,9,20,.03);
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+    border: 1px solid var(--nav-border-color);
+    background-color: white;
+}
+.card-head{
+    min-height: 56px;
+    border-bottom: 1px solid var(--nav-border-color);
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    text-transform: uppercase;
+    color: var(--nav-color);
+    font-weight: 700;
+    font-size: 14px;
+    background-color: var(--nav-bg);
+}
+.card-body{
+    min-height: 300px;
+    padding: 10px;
+}
+
+.card-footer{
+
+}
