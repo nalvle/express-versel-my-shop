@@ -1,6 +1,4 @@
 :root {
-    min-height: calc(var(--vh, 1vh) * 100);
-    min-width: calc(var(--vw, 1vh) * 100);
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, helvetica neue, Arial, noto sans, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol, noto color emoji;
     background-color: #eaedf5;
