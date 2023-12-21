@@ -1,33 +1,50 @@
 {% extends 'admin/layout.html' %}
 
-{% set title = 'Users' %}
+{% set title = 'Пользователи' %}
 
 {% block content %}
+<div class="hero">
+    <div class="hero-ico">:::</div><!-- /.hero-ico -->
+    <div class="hero-title">
+        <span>Пользователи</span>
+        <small>Добавление редактирование пользователей</small>
+    </div><!-- /.hero-title -->
+    <div class="hero-right">right</div><!-- /.hero-right -->
+</div><!-- /.hero -->
 
+<div class="card">
+    <div class="card-head">
+        test
+    </div><!-- /.card-head -->
+    <div class="card-body">
+        <form action="/admin/users" class="add-user" method="post">
+            <label for="user-name">Имя</label>
+            <input type="text" name="name" id="user-name">
+            <label for="user-age">Возраст</label>
+            <input type="number" name="age" id="user-age">
+            <label for="user-email">Email</label>
+            <input type="text" name="email" id="user-email">
+            <button type="submit">Отправить</button>
+        </form><!-- /.add-user -->
+        <ul>
+            {% for user in users %}
+            <li id="{{user._id}}">{{ user.name }} :: {{ user.age }} :: {{ user.email }}
+                <button onclick="deleteId('{{ user._id }}')">Удалить</button>
+            </li>
+            {% else %}
+            <li>This would display if the 'item' collection were empty</li>
+            {% endfor %}
+        </ul>
+    </div><!-- /.card-body -->
+</div><!-- /.card -->
+{% endblock %}
 
+<style>
+    ul li{
+        list-style-type: "\01F892";
+    }
+</style>
 
-<h1>Пользователи</h1>
-<nav>
-    <a href="/"><h4>Главная</h4></a><p></p>
-</nav>
-<form action="/admin/users" class="add-user" method="post">
-    <label for="user-name">Имя</label>
-    <input type="text" name="name" id="user-name">
-    <label for="user-age">Возраст</label>
-    <input type="number" name="age" id="user-age">
-    <label for="user-email">Email</label>
-    <input type="text" name="email" id="user-email">
-    <button type="submit">Отправить</button>
-</form><!-- /.add-user -->
-<ul>
-    {% for user in users %}
-    <li id="{{user._id}}">{{ user.name }} :: {{ user.age }} :: {{ user.email }}
-        <button onclick="deleteId('{{ user._id }}')">Удалить</button>
-    </li>
-    {% else %}
-    <li>This would display if the 'item' collection were empty</li>
-    {% endfor %}
-</ul>
 <script>
     function deleteId(id) {
         fetch('/admin/users/' + id, {
@@ -45,10 +62,3 @@
         })
     }
 </script>
-<style>
-    ul li{
-        list-style-type: "\01F892";
-    }
-</style>
-
-{% endblock %}
