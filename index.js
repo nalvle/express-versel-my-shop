@@ -23,6 +23,7 @@ app.use('/admin/css',express.static(__dirname +'/views/admin/css'));
 app.set('view engine', 'html')
 
 nunjucks.configure('views', {autoescape: true,express: app});
+
 // Users routers 
 app.use('/',main)
 // Admin routers
