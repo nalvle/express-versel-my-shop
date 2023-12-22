@@ -4,50 +4,58 @@
 
 {% block content %}
 <div class="hero">
-    <div class="hero-ico">:::</div><!-- /.hero-ico -->
-    <div class="hero-title">
-        <span>Бренды</span>
-        <small>Добавление редактирование брендов</small>
-    </div><!-- /.hero-title -->
-    <div class="hero-right">right</div><!-- /.hero-right -->
+  <div class="hero-ico">:::</div><!-- /.hero-ico -->
+  <div class="hero-title">
+    <span>Бренды</span>
+    <small>Добавление редактирование брендов</small>
+  </div><!-- /.hero-title -->
+  <div class="hero-right">right</div><!-- /.hero-right -->
 </div><!-- /.hero -->
 
 <div class="list">
-    <div class="list-column">
-        <div class="list-item-title">Наименование</div><!-- /.list-item-title -->
-        <div class="list-item">
-            <input type="checkbox" class="list-checkbox">
-            <input type="text" name="name" class="list-input">
-            <button class="list-del">X</button>
-        </div><!-- /.list-item -->
-    </div><!-- /.list-column -->
+  <div class="list-column">
+    <div class="list-item-title">Наименование</div><!-- /.list-item-title -->
+    <div class="list-item">
+      <input type="checkbox" class="list-checkbox">
+      <input type="text" name="name" class="list-input">
+      <button class="btn-warning">X</button>
+
+    </div><!-- /.list-item -->
+  </div><!-- /.list-column -->
 </div><!-- /.list -->
 
 
 <table style="width: 100%;">
-    <thead>
-      <tr>
-        <th><input type="checkbox" name="" id=""></th>
-        <th>Наименование</th>
-        <th>Описание</th>
-        <th style="text-align: right;">del</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th><input type="checkbox" name="" id=""></th>
-        <td>Acousma</td>
-        <td>Acousma</td>
-        <td style="text-align: right;">del</td>
-      </tr>
-    </tbody>
-  </table>
+  <thead>
+    <tr>
+      <th><input type="checkbox" name="" id=""></th>
+      <th>Наименование</th>
+      <th>Описание</th>
+      <th style="text-align: right;">del</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><input type="checkbox" name="" id=""></th>
+      <td>Acousma</td>
+      <td>Acousma</td>
+      <td style="text-align: right;">del</td>
+    </tr>
+  </tbody>
+</table>
 <div class="card">
-    <div class="card-head">
-        test
-    </div><!-- /.card-head -->
-    <div class="card-body">
-        body
-    </div><!-- /.card-body -->
+  <div class="card-head">
+    test
+  </div><!-- /.card-head -->
+  <div class="card-body">
+    <button class="btn-transition btn btn-shadow btn-outline-secondary">Secondary</button>
+    <button class="btn-transition btn btn-shadow btn-outline-success">Success</button>
+    <button class="btn-transition btn btn-shadow btn-outline-danger">Danger</button>
+    <button class="btn-transition btn btn-shadow btn-outline-danger">Danger</button>
+    <button class="btn-hover-shine btn btn-shadow btn-primary">Primary</button>
+    <div class="tab-link tab-active">eee</div><!-- /.tab-link -->
+    <div class="tab-link">Hover tab</div><!-- /.tab-link -->
+
+  </div><!-- /.card-body -->
 </div><!-- /.card -->
 {% endblock %}

@@ -30,10 +30,10 @@
 
     .nav-menu a {
         position: relative;
-        font-size: 16px;
-        font-weight: 500;
+        font-size: 18px;
         color: var(--link-color);
         padding-left: 10px;
+        transition: background-color .3s ease,color .3s ease;
     }
 
     .nav-menu a:hover {
@@ -109,9 +109,9 @@
         }
     }
 
-    .active {
+    .nav-active {
         color: black!important;
-        font-weight: 1000!important;
+        font-weight: 600!important;
     }
 </style>
 <script>
@@ -124,25 +124,25 @@
 
     switch (window.location.pathname) {
         case "/admin":
-            admin.classList.add('active')
+            admin.classList.add('nav-active')
             break;
         case "/admin/products":
-            products.classList.add('active')
+            products.classList.add('nav-active')
             break;
         case "/admin/categories":
-            categories.classList.add('active')
+            categories.classList.add('nav-active')
             break;
         case "/admin/brands":
-            brands.classList.add('active')
+            brands.classList.add('nav-active')
             break;
         case "/admin/orders":
-            orders.classList.add('active')
+            orders.classList.add('nav-active')
             break;
         case "/admin/users":
-            users.classList.add('active')
+            users.classList.add('nav-active')
             break;
         case "/admin/settings":
-            settings.classList.add('active')
+            settings.classList.add('nav-active')
             break;
     }
 </script>
