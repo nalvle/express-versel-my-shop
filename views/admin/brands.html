@@ -1,8 +1,10 @@
 {% extends 'admin/layout.html' %}
-
 {% set title = 'Бренды' %}
-
 {% block content %}
+<div class="modal-right">
+  
+</div><!-- /.modal-right -->
+
 <div class="hero">
   <div class="hero-ico">:::</div><!-- /.hero-ico -->
   <div class="hero-title">
@@ -29,7 +31,7 @@
   </div><!-- /.list-body-items -->
   <div class="list-body-items">
     <input type="checkbox" name="name" id="name-item">
-    <div class="list-item">Бюстгальтеры</div><!-- /.list-item -->
+    <input class="list-item-edit" type="text" name="name" value="Бюстгальтеры">
     <div class="list-item-del">
       <button class="btn-sm btn-icon btn-icon-only btn-shadow btn-dashed btn btn-outline-warning"><i class="bi bi-trash3"></i></button>
     </div><!-- /.list-item -->
@@ -50,88 +52,7 @@
 </div><!-- /.list -->
 
 <style>
-  .list{
-    width: 100%;
-    box-shadow: var(--panel-box-shadow);
-    border-radius: 5px;
-  }
-  .list-head{
-    width: 100%;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border-bottom: 1px solid var(--nav-border-color);
-    background: var(--nav-bg);
-    color: var(--nav-color);
-    border-radius: 5px 5px 0 0;
-    padding-left: 10px;
-  }
-  .list-body{
-    width: 100%;
-    background-color: white;
-    min-height: 50px;
-  }
-  .list-body-items{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-  }
-  .list-body-items:not(:last-child){
-    border-bottom: 1px dotted #7e8189;
-  }
-  .list-item-del{
-    margin-left: auto;
-  }
-  .list-footer{
-    width: 100%;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    border-top: 1px solid var(--nav-border-color);
-    background: var(--nav-bg);
-    color: var(--nav-color);
-    border-radius: 0 0 5px 5px;
-  }
-  .list-pagination{
-    margin-left: auto;
-    padding-right: 10px;
-    display: flex;
-    gap: 10px;
-  }
 
-  .list-pagination a{
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--nav-border-color);
-    background-color: white;
-    transition: background-color .3s ease,color .3s ease;
-  }
-  .list-pagination a:hover{
-    background-color: #eaedf5;
-  }
-  .list-pagination > .active{
-    background-color: #eaedf5;
-  }
-  .list-pagination select{
-    padding: 0 10px 0 10px;
-  }
-  .list-item{
-    min-width: 120px;
-  }
-
-  @media(max-width:500px){
-    .list-pagination select{
-      display: block!important;
-    }
-    .list-pagination a{
-      display: none;
-    }
-  }
 
 </style>
 {% endblock %}

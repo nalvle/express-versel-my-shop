@@ -1,0 +1,24 @@
+/* TABS */
+.tab-link{
+    width: fit-content;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background: var(--nav-bg);
+    color: var(--title-color);
+    transition: background-color .3s ease,color .3s ease;
+}
+.tab-link:hover{
+    cursor: pointer;
+    background: #3F6AD8;
+    color: white;
+    box-shadow: 0 16px 26px -10px rgba(63,106,216,.56),0 4px 25px 0 rgba(0,0,0,.12),0 8px 10px -5px rgba(63,106,216,.2);
+}
+
+.tab-active{
+    cursor: pointer;
+    background: #3F6AD8;
+    color: white;
+    box-shadow: 0 16px 26px -10px rgba(63,106,216,.56),0 4px 25px 0 rgba(0,0,0,.12),0 8px 10px -5px rgba(63,106,216,.2);
+}
+/* TABS */
