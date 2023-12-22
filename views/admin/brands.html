@@ -27,6 +27,13 @@
         <button class="btn-sm btn-icon btn-icon-only btn-shadow btn-dashed btn btn-outline-warning"><i class="bi bi-trash3"></i></button>
       </div><!-- /.list-item -->
   </div><!-- /.list-body-items -->
+  <div class="list-body-items">
+    <input type="checkbox" name="name" id="name-item">
+    <div class="list-item">Бюстгальтеры</div><!-- /.list-item -->
+    <div class="list-item-del">
+      <button class="btn-sm btn-icon btn-icon-only btn-shadow btn-dashed btn btn-outline-warning"><i class="bi bi-trash3"></i></button>
+    </div><!-- /.list-item -->
+</div><!-- /.list-body-items -->
 </div><!-- /.list-body -->
 <div class="list-footer">
   <div class="list-pagination">
@@ -70,6 +77,9 @@
     align-items: center;
     gap: 10px;
     padding: 10px;
+  }
+  .list-body-items:not(:last-child){
+    border-bottom: 1px dotted #7e8189;
   }
   .list-item-del{
     margin-left: auto;
