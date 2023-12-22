@@ -9,53 +9,104 @@
     <span>Бренды</span>
     <small>Добавление редактирование брендов</small>
   </div><!-- /.hero-title -->
-  <div class="hero-right">right</div><!-- /.hero-right -->
+  <div class="hero-right">
+    <button class="btn-icon btn-transition btn btn-shadow btn-outline-info">Добавить Бренд</button>
+  </div><!-- /.hero-right -->
 </div><!-- /.hero -->
 
 <div class="list">
-  <div class="list-column">
-    <div class="list-item-title">Наименование</div><!-- /.list-item-title -->
-    <div class="list-item">
-      <input type="checkbox" class="list-checkbox">
-      <input type="text" name="name" class="list-input">
-      <button class="btn-warning">X</button>
-
-    </div><!-- /.list-item -->
-  </div><!-- /.list-column -->
+<div class="list-head">
+  <input type="checkbox" name="checkAll" id="checkAll">
+  <div class="list-item">Наименование</div><!-- /.list-item -->
+</div><!-- /.list-head -->
+<div class="list-body">
+  <div class="list-body-items">
+      <input type="checkbox" name="name" id="name-item">
+      <div class="list-item">Бюстгальтеры</div><!-- /.list-item -->
+  </div><!-- /.list-body-items -->
+</div><!-- /.list-body -->
+<div class="list-footer">
+  <div class="list-pagination">
+    <a href="">1</a><a href="">2</a><a href="">3</a><a href="">4</a><a href="">5</a>
+    <select name="pagination" id="" style="display: none;">
+      <option value="1">1</option>
+      <option value="1">2</option>
+      <option value="1">3</option>
+      <option value="1">4</option>
+      <option value="1">5</option>
+    </select><!-- /# -->
+  </div><!-- /.list-pagination -->
+</div><!-- /.list-footer -->
 </div><!-- /.list -->
 
+<style>
+  .list{
+    width: 100%;
+    box-shadow: var(--panel-box-shadow);
+    border-radius: 5px;
+  }
+  .list-head{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid var(--nav-border-color);
+    background: var(--nav-bg);
+    color: var(--nav-color);
+    border-radius: 5px 5px 0 0;
+    padding-left: 10px;
+  }
+  .list-body{
+    width: 100%;
+    background-color: white;
+    min-height: 50px;
+  }
+  .list-body-items{
+    display: flex;
+    gap: 10px;
+    margin-left: 10px;
+  }
+  .list-footer{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--nav-border-color);
+    background: var(--nav-bg);
+    color: var(--nav-color);
+    border-radius: 0 0 5px 5px;
+  }
+  .list-pagination{
+    margin-left: auto;
+    padding-right: 10px;
+    display: flex;
+    gap: 10px;
+  }
 
-<table style="width: 100%;">
-  <thead>
-    <tr>
-      <th><input type="checkbox" name="" id=""></th>
-      <th>Наименование</th>
-      <th>Описание</th>
-      <th style="text-align: right;">del</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th><input type="checkbox" name="" id=""></th>
-      <td>Acousma</td>
-      <td>Acousma</td>
-      <td style="text-align: right;">del</td>
-    </tr>
-  </tbody>
-</table>
-<div class="card">
-  <div class="card-head">
-    test
-  </div><!-- /.card-head -->
-  <div class="card-body">
-    <button class="btn-transition btn btn-shadow btn-outline-secondary">Secondary</button>
-    <button class="btn-transition btn btn-shadow btn-outline-success">Success</button>
-    <button class="btn-transition btn btn-shadow btn-outline-danger">Danger</button>
-    <button class="btn-transition btn btn-shadow btn-outline-danger">Danger</button>
-    <button class="btn-hover-shine btn btn-shadow btn-primary">Primary</button>
-    <div class="tab-link tab-active">eee</div><!-- /.tab-link -->
-    <div class="tab-link">Hover tab</div><!-- /.tab-link -->
+  .list-pagination a{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--nav-border-color);
+  }
+  .list-pagination select{
+    padding: 0 10px 0 10px;
+  }
+  .list-item{
+    min-width: 120px;
+  }
 
-  </div><!-- /.card-body -->
-</div><!-- /.card -->
+  @media(max-width:500px){
+    .list-pagination select{
+      display: block!important;
+    }
+    .list-pagination a{
+      display: none;
+    }
+  }
+
+</style>
 {% endblock %}
