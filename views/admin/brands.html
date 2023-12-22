@@ -23,11 +23,14 @@
   <div class="list-body-items">
       <input type="checkbox" name="name" id="name-item">
       <div class="list-item">Бюстгальтеры</div><!-- /.list-item -->
+      <div class="list-item-del">
+        <button class="btn-sm btn-icon btn-icon-only btn-shadow btn-dashed btn btn-outline-warning"><i class="bi bi-trash3"></i></button>
+      </div><!-- /.list-item -->
   </div><!-- /.list-body-items -->
 </div><!-- /.list-body -->
 <div class="list-footer">
   <div class="list-pagination">
-    <a href="">1</a><a href="">2</a><a href="">3</a><a href="">4</a><a href="">5</a>
+    <a href="">1</a><a class="active" href="">2</a><a href="">3</a><a href="">4</a><a href="">5</a>
     <select name="pagination" id="" style="display: none;">
       <option value="1">1</option>
       <option value="1">2</option>
@@ -64,8 +67,12 @@
   }
   .list-body-items{
     display: flex;
+    align-items: center;
     gap: 10px;
-    margin-left: 10px;
+    padding: 10px;
+  }
+  .list-item-del{
+    margin-left: auto;
   }
   .list-footer{
     width: 100%;
@@ -91,6 +98,14 @@
     align-items: center;
     justify-content: center;
     border: 1px solid var(--nav-border-color);
+    background-color: white;
+    transition: background-color .3s ease,color .3s ease;
+  }
+  .list-pagination a:hover{
+    background-color: #eaedf5;
+  }
+  .list-pagination > .active{
+    background-color: #eaedf5;
   }
   .list-pagination select{
     padding: 0 10px 0 10px;
