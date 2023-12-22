@@ -2,8 +2,11 @@
 {% set title = 'Бренды' %}
 {% block content %}
 <div class="modal-right">
-  
+  test
 </div><!-- /.modal-right -->
+<div class="right">
+  test
+</div><!-- /.right -->
 
 <div class="hero">
   <div class="hero-ico">:::</div><!-- /.hero-ico -->
@@ -52,7 +55,20 @@
 </div><!-- /.list -->
 
 <style>
-
+.modal-right{
+  position: fixed;
+  width: 400px;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  background-color: blueviolet;
+  color: red;
+  z-index: 12;
+}
 
 </style>
+<script src="js/modal.js"></script>
+<script>
+  modal.close()
+</script>
 {% endblock %}
