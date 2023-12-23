@@ -7,4 +7,8 @@
     --link-color-hover:#343a40;
     --bg-panel:#FAFBFC;
     --panel-box-shadow:0 .46875rem 2.1875rem rgba(4,9,20,.03),0 .9375rem 1.40625rem rgba(4,9,20,.03),0 .25rem .53125rem rgba(4,9,20,.05),0 .125rem .1875rem rgba(4,9,20,.03);
+    --z-index-menu:10;
+    --z-index-menu-m:8;
+    --z-index-modal-bg:11;
+    --z-index-modal:12;
 }
