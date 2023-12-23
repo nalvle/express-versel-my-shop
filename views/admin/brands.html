@@ -1,7 +1,7 @@
 {% extends 'admin/layout.html' %}
 {% set title = 'Бренды' %}
 {% block content %}
-<div class="modal-bg" style="display: none">
+<div onclick="close_modal()" class="modal-bg" style="display: none">
 
 </div><!-- /.modal-background -->
 <div class="modal-right" style="display: none">
@@ -15,7 +15,7 @@
     <small>Добавление редактирование брендов</small>
   </div><!-- /.hero-title -->
   <div class="hero-right">
-    <button class="btn-icon btn-transition btn btn-shadow btn-outline-info">Добавить Бренд</button>
+    <button onclick="open_modal()" class="btn-icon btn-transition btn btn-shadow btn-outline-info">Добавить Бренд</button>
   </div><!-- /.hero-right -->
 </div><!-- /.hero -->
 
@@ -74,13 +74,20 @@
     height: 100vh;
     top: 0;
     right: 0;
-    background-color: blueviolet;
-    color: red;
+    background-color: white;
     z-index: var(--z-index-modal);
   }
 </style>
 <script src="js/modal.js"></script>
 <script>
-  modal.open('modal-right')
+  function open_modal(){
+    modal.open('modal-bg')
+    modal.open('modal-right')
+  }
+  function close_modal(){
+    modal.close('modal-bg')
+    modal.close('modal-right')
+  }
+  
 </script>
 {% endblock %}
